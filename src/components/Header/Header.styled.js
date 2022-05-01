@@ -21,6 +21,9 @@ export const Logo = styled.img`
 
 export const ThemeIcon = styled.button`
     color: ${({ theme }) => theme.foregroundColor};
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover{
         opacity: .9;

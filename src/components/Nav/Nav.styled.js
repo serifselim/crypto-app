@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const NavContainer = styled.div`
     position: fixed;
@@ -11,14 +12,15 @@ export const NavContainer = styled.div`
 
 export const NavContent = styled.div`
     display: flex;
+    height: 100%;
 `;
 
-export const NavItem = styled.button`
+export const NavItem = styled(Link)`
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: ${({ theme }) => theme.firstBgColor};
+    background: ${({ active, theme }) => active && theme.secondBgColor};
     color: ${({ theme }) => theme.foregroundColor};
-
+    cursor: pointer;
 `;
