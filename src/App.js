@@ -5,6 +5,8 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './globalStyle';
 import { lightTheme, darkTheme } from './constants/themes';
 import { Route, Routes } from 'react-router-dom';
+import { useStateValue } from './context/Provider';
+
 
 const App = () => {
 
@@ -16,6 +18,9 @@ const App = () => {
     else setCurrentTheme(darkTheme);
   };
 
+  const { state, dispatch } = useStateValue();
+  const { say } = state;
+
   return (
     <ThemeProvider theme={currentTheme}>
       <GlobalStyle />
@@ -23,6 +28,7 @@ const App = () => {
         theme={currentTheme}
         changeTheme={changeTheme}
       />
+      {say}
       <Routes>
         <Route path='/' element={<List />} />
         <Route path='/favorites' element={<Favorites />} />
