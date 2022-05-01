@@ -10,7 +10,6 @@ const CustomLink = ({ icon, to, ...props }) => {
 
     return (
         <NavItem
-            style={{ textDecoration: match ? "underline" : "none" }}
             to={to}
             active={match}
             {...props}
