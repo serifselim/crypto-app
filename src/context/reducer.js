@@ -1,5 +1,8 @@
+import { fetchData } from '../utils';
+
 const initialState = {
-    say: 'hello world again'
+    coinArr: [],
+    filterArr: []
 };
 
 const actionTypes = {
@@ -7,14 +10,18 @@ const actionTypes = {
 };
 
 const reducer = (state, action) => {
-    // switch (action.typ) {
-    //     case value:
-
-    //         break;
-
-    //     default:
-    //         break;
-    // }
+    switch (action.type) {
+        case actionTypes.GET_DATA:
+            return {
+                ...state,
+                coinArr: action.payload,
+                filterArr: action.payload
+            };
+        default:
+            return {
+                ...state
+            };
+    }
 };
 
 export { initialState, actionTypes };

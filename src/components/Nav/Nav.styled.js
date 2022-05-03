@@ -7,6 +7,7 @@ export const NavContainer = styled.div`
     left: 0;
     width: 100%;
     height: 7rem;
+    background: ${({ theme }) => theme.firstBgColor};
     border-top: 0.1px solid ${({ theme }) => theme.borderColor};
 `;
 
