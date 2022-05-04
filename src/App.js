@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Favorites, List } from './pages';
-import { Header, Nav } from './components';
+import { Header, Nav, TableHead } from './components';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './globalStyle';
 import { lightTheme, darkTheme } from './constants/themes';
@@ -30,6 +30,7 @@ const App = () => {
     fetchData(REACT_APP_API).then(data => {
       const payload = data.map(item => {
         item.is_active = false;
+        item.is_follow = false;
         return item;
       });
       dispatch({ type: actionTypes.GET_DATA, payload });

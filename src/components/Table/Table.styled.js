@@ -18,7 +18,7 @@ export const TableRow = styled.tr`
 
 export const TableRowHead = styled(TableRow)``;
 
-export const TableHead = styled.th`
+export const TableHeadItem = styled.th`
     border-top: 1px solid ${({ theme }) => theme.secondBgColor};
     border-bottom: 1px solid ${({ theme }) => theme.secondBgColor};
     background: ${({ theme }) => theme.firstBgColor};    
@@ -62,5 +62,9 @@ export const FavButton = styled.button`
     &:hover{
         opacity: .8;
     }
+`;
+
+export const UnFavButton = styled(FavButton)`
+    background: red;
 `;
 
