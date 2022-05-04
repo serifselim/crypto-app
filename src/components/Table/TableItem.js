@@ -1,15 +1,15 @@
 import React from 'react';
-import { TableRow, TableDetail } from './Table.styled';
+import { TableRow, TableDetail, TableDetailReverse, FavButton } from './Table.styled';
 import { formatToCurrency } from '../../utils';
 
-const TableItem = ({ item, index }) => {
+const TableItem = ({ item, index, changeIsActive, followCoin }) => {
 
     const handleClick = () => {
-
+        changeIsActive(item.id);
     };
 
     return (
-        <TableRow key={item.id} onClick={() => handleClick(item.id)}>
+        <TableRow key={item.id} onClick={handleClick}>
             <TableDetail>{index}</TableDetail>
             <TableDetail>
                 <img src={item.image} alt={item.id} width="50" />
@@ -19,7 +19,17 @@ const TableItem = ({ item, index }) => {
             <TableDetail
                 isPositive={item.price_change_percentage_24h > 0}
             >
-                {item.price_change_percentage_24h.toFixed(2)}%
+                {
+                    !item.is_active ? (
+                        <div>
+                            {item.price_change_percentage_24h.toFixed(2)}
+                        </div>
+                    ) : (
+                        <FavButton onClick={() => followCoin(item)}>
+                            Follow
+                        </FavButton>
+                    )
+                }
             </TableDetail>
         </TableRow>
     );

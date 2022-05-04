@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const TableContainer = styled.main`
-
+    width: 100%;
+    /* padding: 0 1rem; */
 `;
 
 export const TableContent = styled.table`
@@ -12,6 +13,7 @@ export const TableContent = styled.table`
 
 export const TableRow = styled.tr`
     background: ${({ theme }) => theme.secondBgColor};
+    position: relative;
 `;
 
 export const TableRowHead = styled(TableRow)``;
@@ -30,6 +32,7 @@ export const TableDetail = styled.td`
     border-bottom: 1px solid ${({ theme }) => theme.firstBgColor};
     padding: 1rem .5rem;
     font-size: 1.6rem;
+    position: relative;
 
     &:nth-child(2){
         display: flex;
@@ -43,6 +46,21 @@ export const TableDetail = styled.td`
 
     &:last-child{
         color: ${({ isPositive }) => isPositive ? 'green' : 'red'};
+    }
+`;
+
+export const FavButton = styled.button`
+    border-radius: .5rem;
+    background: green;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    padding: .5rem 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    &:hover{
+        opacity: .8;
     }
 `;
 
