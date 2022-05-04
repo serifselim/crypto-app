@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Favorites, List } from './pages';
-import { Header, Nav, TableHead } from './components';
+import { Header, Nav, Search } from './components';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from './globalStyle';
 import { lightTheme, darkTheme } from './constants/themes';
