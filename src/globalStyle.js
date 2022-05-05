@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 
 const globalStyle = createGlobalStyle`
     *{
@@ -29,6 +29,13 @@ const globalStyle = createGlobalStyle`
         background: none;
         border: none;
         color: ${({ theme }) => theme.foregroundColor};
+    }
+`;
+
+export const AppContainer = styled.div`
+    @media(min-width: 768px) {
+        max-width:40%;
+        margin: 0 auto;
     }
 `;
 

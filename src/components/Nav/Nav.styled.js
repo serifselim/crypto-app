@@ -9,6 +9,12 @@ export const NavContainer = styled.div`
     height: 7rem;
     background: ${({ theme }) => theme.firstBgColor};
     border-top: 0.1px solid ${({ theme }) => theme.borderColor};
+
+    @media(min-width: 768px) {
+        max-width:40%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 `;
 
 export const NavContent = styled.div`
